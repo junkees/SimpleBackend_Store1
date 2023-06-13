@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_DATABASE: chtokupit
+      MARIADB_USER: chtokupit
+      MARIADB_PASSWORD: chtokupit
+    volumes:
+      - ./data/var:/var/lib/mysql
+    networks:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - backend
+
+  #chtokupit-app:
+  #  build: ../
+  #  depends_on:
+  #    - db
+  #  ports:
+  #    - "3000:3000"
+  #  environment:
+  #    DB_HOST: 0.0.0.0
+  #    DB_USER: chtokupit
+  #    DB_PASSWORD: chtokupit
+  #    DB_NAME: chtokupit
+  #    DB_PORT: 3306
+  #  networks:
+  #    - backend
+
+networks:
+  backend:
+    driver: bridge
