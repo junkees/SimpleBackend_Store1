@@ -6,6 +6,6 @@ COPY ./package*.json ./
 
 RUN npm install
 
-COPY SimpleBackend_Store1 .
+COPY . .
 
 CMD ["npm", "test"]
