@@ -37,7 +37,7 @@ export const Basket = sequelize.define('basket', {
     timestamps: false
 })
 
-const Item = sequelize.define('item', {
+export const Item = sequelize.define('item', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
