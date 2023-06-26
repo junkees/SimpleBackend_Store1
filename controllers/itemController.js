@@ -24,6 +24,7 @@ class ItemController {
         const items = await Item.findAll({where: {name}})
         return res.json(items)
     }
+
     async addItem(req, res) {
         const {name, price, rating, referral_url, img} = req.body
         console.log(name + price + rating + referral_url + img)

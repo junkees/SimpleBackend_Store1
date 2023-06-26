@@ -66,7 +66,7 @@ export const Item = sequelize.define('item', {
     timestamps: false,
 })
 
-const ItemType = sequelize.define('item_type', {
+export const ItemType = sequelize.define('item_type', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

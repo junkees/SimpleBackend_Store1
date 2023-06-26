@@ -26,20 +26,20 @@ services:
     networks:
       - backend
 
-  #chtokupit-app:
-  #  build: ../
-  #  depends_on:
-  #    - db
-  #  ports:
-  #    - "3000:3000"
-  #  environment:
-  #    DB_HOST: 0.0.0.0
-  #    DB_USER: chtokupit
-  #    DB_PASSWORD: chtokupit
-  #    DB_NAME: chtokupit
-  #    DB_PORT: 3306
-  #  networks:
-  #    - backend
+  chtokupit-app:
+    build: ../
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: 0.0.0.0
+      DB_USER: chtokupit
+      DB_PASSWORD: chtokupit
+      DB_NAME: chtokupit
+      DB_PORT: 3306
+    networks:
+      - backend
 
 networks:
   backend:
